@@ -3,9 +3,9 @@ function generate_host() {
   let api_host = "";
 
   if (hostname.includes("localhost")) {
-    api_host = "https://api-nodejs-todolist.herokuapp.com/";
+    api_host = "https://xplayer-api.inorain.com";
   } else if (hostname.includes("host")) {
-    api_host = "https://api-nodejs-todolist.herokuapp.com/";
+    api_host = "https://xplayer-api.inorain.com";
   } else {
     api_host = "https://" + generate_api_url(hostname);
   }

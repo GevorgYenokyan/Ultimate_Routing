@@ -1,8 +1,8 @@
 import CONSTANTS from "../config";
 
 const URLS = {
-  register: `${CONSTANTS.API_HOST}user/register`,
-  login: `${CONSTANTS.API_HOST}user/login`,
+  register: `${CONSTANTS.API_HOST}/register`,
+  login: `${CONSTANTS.API_HOST}/admin/login`,
   logoute: `${CONSTANTS.API_HOST}user/logout`,
   profile: `${CONSTANTS.API_HOST}user/me`,
   upload_img: `${CONSTANTS.API_HOST}me/avatar`,

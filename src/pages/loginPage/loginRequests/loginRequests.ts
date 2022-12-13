@@ -12,7 +12,7 @@ export function login(values: bodyType, setMessage: Function) {
   };
 
   function callback(data: any) {
-    localStorage.setItem("JWT", data);
+    localStorage.setItem("JWT", data.message);
     console.log(data);
   }
 
