@@ -20,7 +20,6 @@ export function registr(values: bodyType, setMessage: Function) {
   }
 
   function errorCallback(err: any) {
-    console.log(14);
     setMessage({
       text: err.message,
     });

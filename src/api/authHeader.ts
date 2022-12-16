@@ -4,7 +4,8 @@ export default function authHeader() {
   if (JWT) {
     return {
       "Content-Type": "application/json",
-      Authorization: `Bearer   ${JWT}`,
+      //Authorization: `Bearer   ${JWT}`,
+      Authorization: `${JWT}`,
     };
   } else {
     return { "Content-Type": "application/json" };

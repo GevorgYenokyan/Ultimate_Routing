@@ -1,10 +1,15 @@
-import { Button, Form } from "antd";
-import RenderFormInpouts from "../../../components/renderFormInpouts";
-import registerData from "../registrPageData/authorizationData";
-import { registr } from "./registrRequests";
-import ErrorMessage from "../../../components/ErrorMessage";
 import { FC, useState, memo } from "react";
+
+import { registr } from "./registrRequests";
+
+import { Button, Form } from "antd";
+
+import registerData from "../registrPageData/authorizationData";
+import RenderFormInpouts from "../../../components/renderFormInpouts";
+
+import ErrorMessage from "../../../components/ErrorMessage";
 import { MessageType } from "../../../projectDataType/projectDataTyps";
+
 import { formItem, formStyle } from "../style";
 
 const RegistrForm: FC = (): JSX.Element => {

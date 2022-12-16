@@ -1,4 +1,5 @@
 import authHeader from "./authHeader";
+import { createSearchParams } from "react-router-dom";
 
 interface ParamasType {
   method: string;
@@ -13,7 +14,7 @@ export default function request(
   body: any,
   colback: Function,
   errorColback: Function,
-  id = ""
+  query?: {}
 ) {
   let requestParamas: ParamasType = {
     method: method,
@@ -23,7 +24,7 @@ export default function request(
   if (method !== "GET") {
     requestParamas.body = JSON.stringify(body);
   }
-  fetch(`${url}${id}`, requestParamas)
+  fetch(`${url}?${createSearchParams(query)}`, requestParamas)
     .then((data) => data.json())
     .then((response) => colback(response))
     .catch((error) => errorColback(error));

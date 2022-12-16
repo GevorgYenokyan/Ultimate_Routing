@@ -2,6 +2,7 @@ import { MenuUnfoldOutlined } from "@ant-design/icons";
 import Registr from "../pages/registrPage/registr";
 import Login from "../pages/loginPage/Login";
 import { RouteObject } from "react-router-dom";
+import Users from "../pages/users/Users";
 
 export interface routesDataType {
   name: string;
@@ -22,6 +23,13 @@ export const routesData: routesDataType[] = [
     name: "Login",
     path: "/login",
     element: <Login />,
+    icon: <MenuUnfoldOutlined />,
+  },
+
+  {
+    name: "Users",
+    path: "/users",
+    element: <Users />,
     icon: <MenuUnfoldOutlined />,
   },
 

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import Navigation from "./pages/navigation/navigation";
 import { useRoutes } from "react-router-dom";
 import { routesData } from "./routes/routes";
@@ -7,12 +7,10 @@ import "./App.css";
 import { ContainerApp } from "./styles/styled";
 
 const App: FC = () => (
-  <>
-    <ContainerApp>
-      <Navigation />
-      {useRoutes(routesData)}
-    </ContainerApp>
-  </>
+  <ContainerApp>
+    <Navigation />
+    {useRoutes(routesData)}
+  </ContainerApp>
 );
 
 export default App;

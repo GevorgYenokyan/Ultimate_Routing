@@ -1,14 +1,20 @@
-import { FC } from "react";
-import styled from "styled-components";
+import { FC, useEffect } from "react";
 import { memo } from "react";
 import Navlinks from "./components/Navlinks";
+import { Container } from "./style/styles";
+import { addList } from "../../redux/features/usersList/usersListSlise";
+import { useAppDispatch, useAppSelector } from "../../redux/features/reduxHuks";
+import { selectUsersList } from "../../redux/features/usersList/selectors";
 
 const Navigation: FC = (): JSX.Element => {
-  const Container = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  `;
+  const list = useAppSelector(selectUsersList);
+  const dispach = useAppDispatch();
+
+  console.log(list, 225);
+
+  useEffect(() => {
+    dispach(addList([2, 5, 2, 7]));
+  }, []);
 
   return (
     <Container>

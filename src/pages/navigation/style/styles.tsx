@@ -3,6 +3,12 @@ import { PageText as NavText } from "../../../styles/PageText";
 import { Link } from "react-router-dom";
 import { PageItemWrapper as NavItemWrapper } from "../../../styles/ItemWrapper";
 
+export const Container = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+
 export const Text = styled(NavText)`
   color: ${(props) => (props.color ? props.color : "#131111")};
   font-size: ${(props) => (props.fontSize ? props.fontSize : ".9em")};

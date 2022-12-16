@@ -11,6 +11,11 @@ const REQUESTS = {
       request(URLS.login, "POST", body, callback, errorCallback);
     },
   },
+  USERS: {
+    GET: (query: {}, callback: Function, errorCallback: Function) => {
+      request(URLS.users, "GET", {}, callback, errorCallback, query);
+    },
+  },
 };
 
 export default REQUESTS;

@@ -1,18 +1,22 @@
 import { FC, memo } from "react";
+
+import { routesData, routesDataType } from "../../../routes/routes";
+
 import {
   NavbarContainer,
   NavbarLinkContainer,
   NavbarLink,
 } from "../style/styles";
-import { routesData, routesDataType } from "../../../routes/routes";
 
 export interface NavbarProps {}
 
 const Navlinks: FC<NavbarProps> = (): JSX.Element => {
   const links = routesData.map((el: routesDataType) => {
+    const { name, path } = el;
+
     return (
-      <NavbarLink className="nav-link active" to={el.path}>
-        {el.name}
+      <NavbarLink className="nav-link active" to={path}>
+        {name}
       </NavbarLink>
     );
   });
