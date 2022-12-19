@@ -10,8 +10,6 @@ const Navigation: FC = (): JSX.Element => {
   const list = useAppSelector(selectUsersList);
   const dispach = useAppDispatch();
 
-  console.log(list, 225);
-
   useEffect(() => {
     dispach(addList([2, 5, 2, 7]));
   }, []);

@@ -11,9 +11,9 @@ interface ParamasType {
 export default function request(
   url: string,
   method: string,
-  body: any,
-  colback: Function,
-  errorColback: Function,
+  body: {},
+  colback: <Type>(response: Type) => void,
+  errorColback: <Type>(err: Type) => void,
   query?: {}
 ) {
   let requestParamas: ParamasType = {

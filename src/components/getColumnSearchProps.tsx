@@ -2,22 +2,12 @@ import { SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
 import type { ColumnType } from "antd/es/table";
 
-interface DataType {
-  key: string;
-  name: string;
-  age: number;
-  address: string;
-}
-
-export type DataIndex = keyof DataType;
-
-export const getColumnSearchProps = (): ColumnType<DataType> => ({
+export const getColumnSearchProps = <T,>(): ColumnType<T> => ({
   filterDropdown: ({ setSelectedKeys, selectedKeys, confirm }) => (
     <div style={{ padding: 8 }} onKeyDown={(e) => e.stopPropagation()}>
       <Input
         allowClear
         autoFocus
-        placeholder={`Search `}
         value={selectedKeys[0]}
         onChange={(e) => {
           setSelectedKeys(e.target.value ? [e.target.value] : []);

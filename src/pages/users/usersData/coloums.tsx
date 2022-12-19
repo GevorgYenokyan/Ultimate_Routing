@@ -32,10 +32,6 @@ export const columns: ColumnsType<DataType> = [
     title: "Address",
     dataIndex: "address",
     key: "address",
-    filters: [
-      { text: "London", value: "London" },
-      { text: "New York", value: "New York" },
-    ],
 
     ellipsis: true,
   },

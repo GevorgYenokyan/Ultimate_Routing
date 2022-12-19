@@ -15,18 +15,21 @@ function RenderFormInpouts({
         const { name, placeholder, type, id } = el;
         return (
           <Form.Item
-            style={formItem}
             key={`${id}`}
             name={name}
             rules={[
               { required: true, message: `Please input your ${placeholder}!` },
             ]}
           >
-            <Input
-              // prefix={<LockOutlined className="site-form-item-icon" />}
-              type={type}
-              placeholder={placeholder}
-            />
+            {type === "password" ? (
+              <Input.Password
+                type={type}
+                placeholder={placeholder}
+                style={formItem}
+              />
+            ) : (
+              <Input style={formItem} type={type} placeholder={placeholder} />
+            )}
           </Form.Item>
         );
       }

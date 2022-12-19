@@ -3,9 +3,9 @@ function generate_host() {
   let api_host = "";
 
   if (hostname.includes("localhost")) {
-    api_host = "https://xplayer-api.inorain.com";
+    api_host = "";
   } else if (hostname.includes("host")) {
-    api_host = "https://xplayer-api.inorain.com";
+    api_host = "";
   } else {
     api_host = "https://" + generate_api_url(hostname);
   }
