@@ -32,11 +32,27 @@ const Users: FC = (): JSX.Element => {
     GetUsersList(pagination, sortedInfo, filteredInfo);
   }, [sortedInfo, pagination, filteredInfo]);
 
-  useEffect(() => {
-    getUsersTableList();
-  }, [sortedInfo, pagination, filteredInfo]);
+  // useEffect(() => {
+  //   getUsersTableList();
+  // }, [sortedInfo, pagination, filteredInfo]);
 
-  console.log(filteredInfo, "query");
+  // console.log(filteredInfo, "query");
+
+  let name = "John";
+
+  function sayHi() {
+    console.log("Hi, " + name);
+    name = "Poxos";
+    name = "Lendo";
+  }
+
+  name = "Vaspur";
+  name = "Valod";
+
+  useEffect(() => {
+    sayHi();
+  }, []);
+
   return (
     <Table
       columns={columns}
