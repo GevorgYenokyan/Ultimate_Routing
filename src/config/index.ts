@@ -34,8 +34,8 @@ interface CONSTANTSTYPE {
 const HOST = generate_host();
 const CONSTANTS: CONSTANTSTYPE = {
   JWT: "JWT",
-  APP_NAME: "ULTIMATE-ROUTING",
-  API_HOST: HOST,
+  APP_NAME: "ULTIMATE-ROUTING", //process.env.REACT_APP_APPLICATION_NAME,
+  API_HOST: HOST, //process.env.REACT_APP_API_URL,
 };
 
 export default CONSTANTS;
