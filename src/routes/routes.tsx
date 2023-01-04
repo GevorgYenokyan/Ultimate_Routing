@@ -1,8 +1,8 @@
 import { MenuUnfoldOutlined } from "@ant-design/icons";
 import Registr from "../pages/registrPage/registr";
 import Login from "../pages/loginPage/Login";
-import { RouteObject } from "react-router-dom";
 import Users from "../pages/users/Users";
+import VirtualScrollList from "../pages/VirtualScroll/VirtualScrollList";
 
 export interface routesDataType {
   name: string;
@@ -30,6 +30,13 @@ export const routesData: routesDataType[] = [
     name: "Users",
     path: "/users",
     element: <Users />,
+    icon: <MenuUnfoldOutlined />,
+  },
+
+  {
+    name: "VirtualScrollList",
+    path: "/virtualScrollList",
+    element: <VirtualScrollList />,
     icon: <MenuUnfoldOutlined />,
   },
 
