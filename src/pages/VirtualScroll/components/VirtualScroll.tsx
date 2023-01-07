@@ -21,7 +21,8 @@ const UiVirtualScroll: FC<UiVirtualScrollProps<any>> = ({
   onNextCallback,
   children,
 }) => {
-  const overlayRef: any = useRef<any>(null);
+  const overlayRef: React.RefObject<HTMLDivElement> =
+    useRef<HTMLDivElement>(null);
 
   const [upperBoundary, setUpperBoundary] = useState<number>(offset);
 
@@ -31,7 +32,7 @@ const UiVirtualScroll: FC<UiVirtualScrollProps<any>> = ({
   const [currentScrollTopPosition, setCurrentScrollTopPosition] =
     useState<number>(0);
 
-  const handleScroll = (target: any) => {
+  const handleScroll = (target: HTMLDivElement) => {
     if (isLoading) {
       return;
     }
@@ -50,7 +51,7 @@ const UiVirtualScroll: FC<UiVirtualScrollProps<any>> = ({
         setUpperBoundary(upperBoundary - limit);
         setLowerBoundary(lowerBoundary - limit);
 
-        if (overlayRef !== null) {
+        if (overlayRef !== null && overlayRef.current !== null) {
           const scrollPos = limit * rowHeight;
           overlayRef.current.scrollTo(0, scrollPos);
         }
@@ -63,7 +64,7 @@ const UiVirtualScroll: FC<UiVirtualScrollProps<any>> = ({
         setUpperBoundary(upperBoundary + limit);
         setLowerBoundary(lowerBoundary + limit);
 
-        if (overlayRef !== null) {
+        if (overlayRef !== null && overlayRef.current !== null) {
           const scrollPos = limit * rowHeight;
 
           overlayRef.current.scrollTo(0, scrollPos * 2);
